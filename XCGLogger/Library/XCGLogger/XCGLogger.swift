@@ -14,7 +14,7 @@ private extension NSThread {
 
         let localeToUse = locale ?? NSLocale.currentLocale()
 
-        let threadDictionary = NSThread.currentThread().threadDictionary
+        let threadDictionary = NSThread.currentThread().threadDictionary as NSMutableDictionary!
         var dataFormatterCache: [String:NSDateFormatter]? = threadDictionary.objectForKey(XCGLogger.constants.nsdataFormatterCacheIdentifier) as? [String:NSDateFormatter]
         if dataFormatterCache == nil {
             dataFormatterCache = [String:NSDateFormatter]()
